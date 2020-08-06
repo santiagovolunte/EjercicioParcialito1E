@@ -34,19 +34,18 @@ function mostrar() {
 	sintoma = document.getElementById("Sintoma").value;
 
 	if ((temperatura > 34 && temperatura < 41)) {
-		if (temperatura >= 38) {
+		if (temperatura > 37) {
 			alert("Permiso no otorgado.");
 		}
-		else if ((temperatura <= 37) && (sintoma == "tos"));
+		else if ( temperatura < 38 && sintoma=="Tos")
 		{
-			alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo.")
+			alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo.");
 		}
-
-		if ((temperatura < 39) && (sintoma == "PerdidaGusto" || sintoma == "PerdidaGusto")) {
+	    else if ((temperatura < 38) && (sintoma =="PerdidaGusto" || sintoma =="PerdidaOlfato")) {
 			alert("Permiso otorgado");
 		}
 
-		else if (sintoma = "DificultadParaRespirar") {
+		else if (sintoma == "DificultadParaRespirar") {
 			alert("Permiso no otorgado");
 		}
 		else {
@@ -54,7 +53,7 @@ function mostrar() {
 		}
 	}
 
-
 	else {
-	alert("La temperatura es incorrecta");
-}}
+		alert("La temperatura es incorrecta");
+	}
+}

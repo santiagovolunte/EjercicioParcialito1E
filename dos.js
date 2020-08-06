@@ -33,7 +33,6 @@ let lacteo;
 			contadorbebidas++;
 		}
 		else if (cat=="lacteos") { 
-			if  
 
 		}
 
