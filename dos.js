@@ -15,36 +15,48 @@ function mostrar() {
 	let nombre;
 	let cat;
 	let precio;
-	let max = 1000;
+	let max;
 	let flag = 0;
 	let contadorbebidas = 0;
-let lacteo;
+	let lacteo;
+	let articulocaro;
+	let preciolacteo = 0;
+
 
 	do {
 		nombre = prompt("Ingrese nombre de articulo");
-		cat = prompt("Ingrese categoría");
-		precio = parseInt(prompt("Ingrese precio $?"));
+		do {
+			cat = prompt("Ingrese categoría");
+		} while (!(cat == "lacteos" || cat == "bebidas" || cat == "almacen" || cat == "limpieza"));
+
+		do {
+			precio = parseInt(prompt("Ingrese precio $?"));
+		} while (!(precio >= 0 && precio <= 1000));
 
 		if (flag == 0) {
-			precio = max
+			max = precio
 			flag = 1
 		}
-		if (cat=="bebidas"){
-			contadorbebidas++;
+		if (precio >= max) {
+			max = precio
+			articulocaro = nombre
 		}
-		else if (cat=="lacteos") { 
-
+		if (cat == "lacteos") {
+			if (precio>=preciolacteo) {
+			     lacteo = nombre}
+	  }
+		else if (cat == "bebidas") {
+			contadorbebidas++;
 		}
 
 		respuesta = prompt("Desea continuar ingresando productos? Si/No")
 
 	} while (respuesta == "si")
 
-	if (max >= precio) {
-		document.write("El producto más caro es :" + nombre);
-	}
-	document.write("el lacteo más caro es :" + lacteo);
-	document.write(" Cantidad de articulos de categoría bebidas: " + contadorbebidas);
+
+	document.write("El producto más caro es :" + articulocaro + "<br>");
+	document.write("El lacteo más caro es :" + lacteo + "<br>");
+	document.write("Cantidad de articulos de categoría bebidas: " + contadorbebidas + "<br>");
 
 
 }
